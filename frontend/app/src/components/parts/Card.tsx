@@ -3,7 +3,7 @@ import Badge from "./Badge";
 
 const Card = () => {
   return (
-    <div className="max-w-md rounded-lg overflow-hidden shadow-lg">
+    <div className="w-96 rounded-lg overflow-hidden shadow-lg">
       <img className="w-full h-48" src={image} alt="Sunset in the mountains" />
       <div className="px-6 pt-4">
         <div className=" text-2xl mb-2 text-left">The Coldest Sunset</div>
