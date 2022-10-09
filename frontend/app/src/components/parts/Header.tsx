@@ -1,5 +1,5 @@
 import { AiFillCaretDown } from "react-icons/ai";
-import image from "../../logo192.png";
+import image from "../../assets/logo192.png";
 import NewButton from "./NewButton";
 
 const Header = () => {
@@ -21,8 +21,8 @@ const Header = () => {
           <NewButton />
         </div>
 
-        <div className="">
-          <img className="h-8 w-8 rounded-full " src={image} alt="" />
+        <div className="h-8 w-8 rounded-full bg-gray2 ">
+          <img src={image} alt="" />
         </div>
         <div className="inline-flex items-center space-x-2 cursor-pointer">
           <p>Names</p>
