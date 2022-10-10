@@ -1,12 +1,29 @@
+import { useState } from "react";
+import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
 import image from "../../assets/railroad-163518__480.jpg";
 import Badge from "./Badge";
 
 const Card = () => {
+  const [dark, setDark] = useState(false);
   return (
-    <div className="w-96 rounded-lg overflow-hidden shadow-lg">
+    <div
+      className={`w-96 rounded-lg overflow-hidden shadow-lg relative ${
+        dark ? "bg-navy2" : "bg-white2"
+      }`}
+    >
+      <div
+        className={`absolute top-2 right-4 p-1 rounded-full `}
+        onClick={() => {
+          setDark(!dark);
+        }}
+      >
+        {dark ? <BsBrightnessHigh /> : <BsMoonStarsFill />}
+      </div>
       <img className="w-full h-48" src={image} alt="Sunset in the mountains" />
       <div className="px-6 pt-4">
-        <div className=" text-2xl mb-2 text-left">The Coldest Sunset</div>
+        <div className={`text-2xl mb-2 text-left ${dark && "text-white2"}`}>
+          Event
+        </div>
       </div>
       <div className="px-6 pt-2 pb-2 text-left">
         <Badge>badge</Badge>
@@ -20,9 +37,9 @@ const Card = () => {
               src={image}
             ></img>
           </div>
-          <p>Company</p>
+          <p className={dark ? "text-white2" : ""}>Company</p>
         </div>
-        <div className="justify-self-end">
+        <div className={`justify-self-end ${dark && "text-white2"}`}>
           <p>10/4~</p>
         </div>
       </div>
