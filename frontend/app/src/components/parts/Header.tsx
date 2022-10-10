@@ -8,8 +8,8 @@ const Header = ({ children }: { children?: any }) => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <>
-      <div className="h-20 w-screen grid grid-cols-2 content-center border-b">
+    <div className="static h-full">
+      <div className="h-20 w-screen grid grid-cols-2 content-center border-b bg-white z-10">
         <div className="justify-self-start ml-6 flex items-center">
           <p className="font-bold text-2xl text-navy2">AppName</p>
           <div className=" ml-16 flex space-x-6">
@@ -73,8 +73,9 @@ const Header = ({ children }: { children?: any }) => {
           </div>
         </div>
       </div>
-      {children[tab]}
-    </>
+
+      <div className="h-full">{children[tab]}</div>
+    </div>
   );
 };
 
