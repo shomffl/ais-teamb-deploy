@@ -4,7 +4,7 @@ import Profile from "./Profile";
 
 const Main = () => {
   return (
-    <div className="h-screen overflow-auto">
+    <div className="">
       <Header>
         <DashBoard />
         <div>a</div>
