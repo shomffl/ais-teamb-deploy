@@ -56,17 +56,17 @@ const DashBoard = () => {
           <p id="recuruite" className="text-4xl text-left my-6 mb-8">
             募集中
           </p>
-          <div className="grid  md:grid-cols-2 sm:grid-cols-1 gap-y-8 gap-x-1 ">
+          <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 gap-x-1 ">
             {[...Array(5)].map((_) => (
-              <div className="">
+              <>
                 <Card />
-              </div>
+              </>
             ))}
           </div>
           <p id="notrecuruite" className="text-4xl text-left my-6 mt-14">
             募集済み
           </p>
-          <div className="grid  md:grid-cols-2 grid-cols-1 gap-y-8 ">
+          <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 ">
             {[...Array(5)].map((_) => (
               <div className="">
                 <Card />

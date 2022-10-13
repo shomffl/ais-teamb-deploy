@@ -12,12 +12,12 @@ const Header = ({ children }: { children?: any }) => {
       <div className="h-20 w-screen grid grid-cols-2 content-center border-b bg-white">
         <div className="justify-self-start ml-6 flex items-center">
           <p className="font-bold text-2xl text-navy2">AppName</p>
-          <div className=" ml-16 flex space-x-6">
+          <div className="ml-16 flex space-x-6">
             <div
               onClick={() => {
                 setTab(0);
               }}
-              className={`py-7 hover:border-b hover:text-blue2-light border-blue2 text-gray2 cursor-pointer ${
+              className={`py-7 hover:border-b hover:text-blue2-light hover:border-blue2-light border-blue2 text-gray2 cursor-pointer ${
                 tab === 0 && "border-b text-blue2"
               }`}
             >
@@ -28,7 +28,7 @@ const Header = ({ children }: { children?: any }) => {
               onClick={() => {
                 setTab(1);
               }}
-              className={`py-7 hover:border-b hover:text-blue2-light border-blue2 text-gray2 cursor-pointer ${
+              className={`py-7 hover:border-b hover:text-blue2-light hover:border-blue2-light border-blue2 text-gray2 cursor-pointer ${
                 tab === 1 && "border-b text-blue2"
               }`}
             >
