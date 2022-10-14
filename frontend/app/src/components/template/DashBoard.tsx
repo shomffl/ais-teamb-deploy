@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
-import Card from "../parts/Card";
-import NewButton from "../parts/NewButton";
+import NewButton from "../atoms/NewButton";
+import Card from "../organisms/Card";
 
 const DashBoard = () => {
   const scroll = (tag: string) => {
@@ -16,7 +16,7 @@ const DashBoard = () => {
     }
   };
   return (
-    <div className="container mx-auto py-20">
+    <div className="md:container mx-auto py-20">
       <div className="grid grid-cols-5 text-left">
         <div className="relative">
           <div className="my-36 w-44 justify-self-start fixed">

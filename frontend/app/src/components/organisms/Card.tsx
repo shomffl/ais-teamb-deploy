@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
 import image from "../../assets/railroad-163518__480.jpg";
-import Badge from "./Badge";
+import Badge from "../atoms/Badge";
 
 const Card = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState<boolean>(false);
   return (
     <div
       className={`w-96 rounded-lg overflow-hidden shadow-lg relative ${
