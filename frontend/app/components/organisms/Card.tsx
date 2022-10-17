@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
-import image from "../../assets/railroad-163518__480.jpg";
+import image from "../../public/railroad-163518__480.jpg";
 import Badge from "../atoms/Badge";
 
 const Card = () => {
@@ -19,7 +19,11 @@ const Card = () => {
       >
         {dark ? <BsBrightnessHigh /> : <BsMoonStarsFill />}
       </div>
-      <img className="w-full h-48" src={image} alt="Sunset in the mountains" />
+      <img
+        className="w-full h-48"
+        src={image.src}
+        alt="Sunset in the mountains"
+      />
       <div className="px-6 pt-4">
         <div className={`text-2xl mb-2 text-left ${dark && "text-white2"}`}>
           Event
@@ -34,7 +38,7 @@ const Card = () => {
             <img
               className="w-full h-full rounded-full"
               alt=""
-              src={image}
+              src={image.src}
             ></img>
           </div>
           <p className={dark ? "text-white2" : ""}>Company</p>

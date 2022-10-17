@@ -1,4 +1,3 @@
-import image from "../../assets/logo192.png";
 import NewButton from "../atoms/NewButton";
 import Tab from "../molucules/Tab";
 import UserMenu from "../molucules/UserMenu";
@@ -17,7 +16,7 @@ const Header = ({ page }: { page?: number }) => {
           </div>
 
           <div className="h-8 w-8 rounded-full bg-gray2 ">
-            <img src={image} alt="" />
+            <img src="../../assets/railroad-163518__480.jpg" alt="" />
           </div>
           <UserMenu />
         </div>

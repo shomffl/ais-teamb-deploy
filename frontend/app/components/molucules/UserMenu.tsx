@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const UserMenu = () => {
   const [menu, setMenu] = useState<boolean>(false);
@@ -21,9 +21,10 @@ const UserMenu = () => {
             !menu && "invisible"
           }`}
         >
-          <Link to={`/profile`}>
+          <Link href="/profile">
             <div className="p-4">profile</div>
           </Link>
+
           <div className="p-4">Settings</div>
           <div className="p-4 text-red-500">Logout</div>
         </div>
