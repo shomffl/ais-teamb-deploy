@@ -3,7 +3,13 @@ import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
 import image from "../../public/railroad-163518__480.jpg";
 import Badge from "../atoms/Badge";
 
-const Card = () => {
+type eventType = {
+  id: number;
+  name: string;
+  detail: string;
+  image_path: any;
+};
+const Card = ({ data }: { data: eventType }) => {
   const [dark, setDark] = useState<boolean>(false);
   return (
     <div
@@ -21,12 +27,12 @@ const Card = () => {
       </div>
       <img
         className="w-full h-48"
-        src={image.src}
+        src={data.image_path.src}
         alt="Sunset in the mountains"
       />
       <div className="px-6 pt-4">
         <div className={`text-2xl mb-2 text-left ${dark && "text-white2"}`}>
-          Event
+          {data?.name}
         </div>
       </div>
       <div className="px-6 pt-2 pb-2 text-left">

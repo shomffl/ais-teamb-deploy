@@ -1,4 +1,5 @@
 import { SyntheticEvent } from "react";
+import image from "../../public/railroad-163518__480.jpg";
 import NewButton from "../atoms/NewButton";
 import Card from "../organisms/Card";
 
@@ -14,6 +15,12 @@ const DashBoard = () => {
         behavior: "smooth",
       });
     }
+  };
+  const fakeData = {
+    id: 1,
+    name: "Event",
+    detail: "aaa",
+    image_path: image,
   };
   return (
     <div className="md:container mx-auto py-20">
@@ -59,7 +66,7 @@ const DashBoard = () => {
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 gap-x-1 ">
             {[...Array(5)].map((_) => (
               <>
-                <Card />
+                <Card data={fakeData} />
               </>
             ))}
           </div>
@@ -69,7 +76,7 @@ const DashBoard = () => {
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 ">
             {[...Array(5)].map((_) => (
               <div className="">
-                <Card />
+                <Card data={fakeData} />
               </div>
             ))}
           </div>

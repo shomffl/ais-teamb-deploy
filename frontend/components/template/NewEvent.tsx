@@ -12,7 +12,7 @@ const NewEvent = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto">
+      <div className="container mx-auto p-20">
         <TitleInput />
         <RichTextEditor
           classNames={{ root: "border-none caret-blue2" }}
