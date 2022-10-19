@@ -5,7 +5,7 @@ import SelectImage from "../molucules/SelectImage";
 import Header from "../organisms/Header";
 
 const NewEvent = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("<p>本文</p>");
   const handleOnChange = (value: any) => {
     setValue(value);
     console.log(value);
@@ -13,7 +13,7 @@ const NewEvent = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto p-20">
+      <div className="container mx-auto p-20 space-y-4">
         <TitleInput />
         <SelectImage />
         <RichTextEditor
