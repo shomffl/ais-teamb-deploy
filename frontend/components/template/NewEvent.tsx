@@ -17,7 +17,7 @@ const NewEvent = () => {
         <TitleInput />
         <SelectImage />
         <RichTextEditor
-          classNames={{ root: "border-none caret-blue2" }}
+          classNames={{ root: "border-none caret-blue2", toolbar: "pl-0" }}
           value={value}
           onChange={handleOnChange}
           id="rte"
