@@ -1,5 +1,5 @@
 import { SyntheticEvent } from "react";
-import image from "../../public/railroad-163518__480.jpg";
+import { getMyEvent } from "../../api/getEvent";
 import NewButton from "../atoms/button/NewButton";
 import Card from "../organisms/Card";
 
@@ -16,12 +16,7 @@ const DashBoard = () => {
       });
     }
   };
-  const fakeData = {
-    id: 1,
-    name: "Event",
-    detail: "aaa",
-    image_path: image,
-  };
+  const { data, isLoading, error, mutate } = getMyEvent();
   return (
     <div className="md:container mx-auto py-20">
       <div className="grid grid-cols-5 text-left">
@@ -64,21 +59,23 @@ const DashBoard = () => {
             募集中
           </p>
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 gap-x-1 ">
-            {[...Array(5)].map((_) => (
-              <>
-                <Card data={fakeData} />
-              </>
-            ))}
+            {data &&
+              data.data.map((value: any) => (
+                <>
+                  <Card data={value} />
+                </>
+              ))}
           </div>
           <p id="notrecuruite" className="text-4xl text-left my-6 mt-14">
             募集済み
           </p>
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 ">
-            {[...Array(5)].map((_) => (
-              <div className="">
-                <Card data={fakeData} />
-              </div>
-            ))}
+            {data &&
+              data.data.map((value: any) => (
+                <>
+                  <Card data={value} />
+                </>
+              ))}
           </div>
         </div>
       </div>
