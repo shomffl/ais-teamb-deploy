@@ -1,9 +1,9 @@
-# frozen_string_literal: true
 
-puts 'school ダミーデータの作成開始'
+
+puts 'school Start to create dummy data...'
 
 10.times do
-  School.create(
-    name: Faker::Name.name
-  )
+    School.create(
+        name: Faker::University.name
+    )
 end
