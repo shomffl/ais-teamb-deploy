@@ -38,7 +38,6 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-<<<<<<< HEAD
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # 　ダミーデータ作成のためのgem install
@@ -46,12 +45,3 @@ gem 'faker'
 
 # ruby linter
 gem 'rubocop'
-=======
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-#　ダミーデータ作成のためのgem install
-gem 'faker'
-
-# ruby linter
-gem 'rubocop'
->>>>>>> 2bde0f7ba7e358cc5d3383154993d75e2777077c

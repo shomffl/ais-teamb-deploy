@@ -91,11 +91,7 @@ GEM
     msgpack (1.6.0)
     mysql2 (0.5.4)
     nio4r (2.5.8)
-<<<<<<< HEAD
     nokogiri (1.13.9-aarch64-linux)
-=======
-    nokogiri (1.13.8-aarch64-linux)
->>>>>>> 2bde0f7ba7e358cc5d3383154993d75e2777077c
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.1)
@@ -141,11 +137,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.0)
     rexml (3.2.5)
-<<<<<<< HEAD
     rubocop (1.37.0)
-=======
-    rubocop (1.36.0)
->>>>>>> 2bde0f7ba7e358cc5d3383154993d75e2777077c
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
@@ -177,10 +169,6 @@ GEM
 
 PLATFORMS
   aarch64-linux
-<<<<<<< HEAD
-=======
-  x86_64-linux
->>>>>>> 2bde0f7ba7e358cc5d3383154993d75e2777077c
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
