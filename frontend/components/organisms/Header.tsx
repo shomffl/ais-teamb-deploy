@@ -1,4 +1,4 @@
-import NewButton from "../atoms/NewButton";
+import NewButton from "../atoms/button/NewButton";
 import Tab from "../molucules/Tab";
 import UserMenu from "../molucules/UserMenu";
 

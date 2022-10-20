@@ -1,6 +1,6 @@
 import useImageFile from "../../hooks/ImageFile";
+import ImageInput from "../atoms/button/SelectImageButton";
 import DeleteFile from "../atoms/DeleteFile";
-import ImageInput from "../atoms/SelectImageButton";
 
 const SelectImage = () => {
   const { image, setImage, handleChangeFile } = useImageFile();
@@ -13,7 +13,7 @@ const SelectImage = () => {
             <img src={image} className="h-full w-full" />
             <div className="absolute bottom-2 right-0 z-10 flex space-x-2">
               <ImageInput handleFiles={handleChangeFile} />
-              <DeleteFile onClick={setImage} />
+              <DeleteFile onClick={() => setImage("")} />
             </div>
           </div>
         )}

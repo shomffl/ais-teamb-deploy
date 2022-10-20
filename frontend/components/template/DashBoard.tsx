@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 import image from "../../public/railroad-163518__480.jpg";
-import NewButton from "../atoms/NewButton";
+import NewButton from "../atoms/button/NewButton";
 import Card from "../organisms/Card";
 
 const DashBoard = () => {

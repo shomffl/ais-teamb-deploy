@@ -1,6 +1,6 @@
 import RichTextEditor from "@mantine/rte";
 import { useState } from "react";
-import TitleInput from "../atoms/title/input";
+import TitleInput from "../atoms/input/title/input";
 import SelectImage from "../molucules/SelectImage";
 import Header from "../organisms/Header";
 
