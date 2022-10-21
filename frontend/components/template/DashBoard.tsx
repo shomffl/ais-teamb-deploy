@@ -60,10 +60,10 @@ const DashBoard = () => {
           </p>
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 gap-x-1 ">
             {data &&
-              data.data.map((value: any) => (
-                <>
+              data.data.map((value: any, i: number) => (
+                <div key={i}>
                   <Card data={value} />
-                </>
+                </div>
               ))}
           </div>
           <p id="notrecuruite" className="text-4xl text-left my-6 mt-14">
@@ -71,10 +71,10 @@ const DashBoard = () => {
           </p>
           <div className="grid  lg:grid-cols-2 grid-cols-1 gap-y-8 ">
             {data &&
-              data.data.map((value: any) => (
-                <>
+              data.data.map((value: any, i: number) => (
+                <div key={i}>
                   <Card data={value} />
-                </>
+                </div>
               ))}
           </div>
         </div>
