@@ -22,7 +22,19 @@ module Api
         end
       end
 
-      def edit; end
+      def destroy
+        event = Event.find(params[:id])
+        if event.destroy
+          render json: { status: 'SUCCESS', message: 'Delete the event', data: event }
+        else
+          render json: { status: 'ERROR', data: event.errors }
+        end
+      end
+
+      private
+      def event_params
+        params.require(:event).permit(:name, :detail, :image_path)
+      end
     end
   end
 end
