@@ -13,6 +13,15 @@ module Api
         render json: { status: 'SUCCESS', message: 'send back event', data: event }
       end
 
+      def create
+        event = Event.new(event_params)
+        if event.save
+          render json: { status: 'SUCCESS', data: event }
+        else
+          render json: { status: 'ERROR', data: event.errors }
+        end
+      end
+
       def edit; end
     end
   end
