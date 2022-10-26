@@ -8,7 +8,10 @@ module Api
         render json: { status: 'SUCCESS', message: 'send back all events', data: events }
       end
 
-      def show; end
+      def show
+        event = Event.find(params[:id])
+        render json: { status: 'SUCCESS', message: 'send back event', data: event }
+      end
 
       def edit; end
     end
