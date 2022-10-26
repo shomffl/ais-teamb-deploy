@@ -22,6 +22,15 @@ module Api
         end
       end
 
+      def update
+        event = Event.find(params[:id])
+        if event.update(event_params)
+          render json: { status: 'SUCCESS', data: event }
+        else
+          render json: { status: 'ERROR', data: event.errors }
+        end
+      end
+
       def destroy
         event = Event.find(params[:id])
         if event.destroy
