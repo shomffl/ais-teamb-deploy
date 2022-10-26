@@ -1,4 +1,3 @@
-
 puts 'event Start to create dummy data...'
 
 10.times do |index|
