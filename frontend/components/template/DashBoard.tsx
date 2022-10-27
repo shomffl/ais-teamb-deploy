@@ -2,7 +2,6 @@ import { SyntheticEvent } from "react";
 import { getMyEvent } from "../../api/getEvent";
 import NewButton from "../atoms/button/NewButton";
 import Card from "../organisms/Card";
-import EventModal from "./EventModal";
 
 const DashBoard = () => {
   const scroll = (tag: string) => {
@@ -20,7 +19,6 @@ const DashBoard = () => {
   const { data, isLoading, error, mutate } = getMyEvent();
   return (
     <>
-      <EventModal markdown={"<h1>title2</h1>"} />
       <div className="md:container mx-auto py-20">
         <div className="grid grid-cols-5 text-left">
           <div className="relative">

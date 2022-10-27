@@ -1,13 +1,21 @@
 import { TypographyStylesProvider } from "@mantine/core";
 import Image from "next/image";
-import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import image from "../../public/railroad-163518__480.jpg";
-const EventModal = ({ markdown }: { markdown?: any }) => {
-  const [open, setOpen] = useState<boolean>(true);
+const EventModal = ({
+  markdown,
+  open,
+  setOpen,
+  data,
+}: {
+  markdown?: any;
+  open: boolean;
+  setOpen: (arg: boolean) => void;
+  data: any;
+}) => {
   return (
     <div
-      className={`overflow-auto absolute top-0 left-0 w-full h-full z-10 bg-black bg-opacity-40 ${
+      className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-40 ${
         open || "hidden"
       }`}
     >
@@ -32,15 +40,10 @@ const EventModal = ({ markdown }: { markdown?: any }) => {
         </div>
 
         <div className="p-10 bg-white">
-          <p className="font-bold text-4xl">Title</p>
+          <p className="font-bold text-4xl">{data.name}</p>
           <TypographyStylesProvider>
             <div dangerouslySetInnerHTML={{ __html: markdown }} />
           </TypographyStylesProvider>
-          <p className="font-bold text-4xl">Title</p>
-          <p className="font-bold text-4xl">Title</p>
-          <p className="font-bold text-4xl">Title</p>
-          <p className="font-bold text-4xl">Title</p>
-          <p className="font-bold text-4xl">Title</p>
         </div>
       </div>
     </div>
