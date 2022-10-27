@@ -22,6 +22,15 @@ module Api
         end
       end
 
+      def new 
+        event = Event.new
+      end
+
+      def edit 
+        event = Event.find(params[:id])
+        render json: { status: 'SUCCESS', message: 'send back event', data: event }
+      end
+
       def update
         event = Event.find(params[:id])
         if event.update(event_params)
