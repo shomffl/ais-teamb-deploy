@@ -23,7 +23,7 @@ const DashBoard = () => {
         <div className="grid grid-cols-5 text-left">
           <div className="relative">
             <div className="my-36 w-44 justify-self-start fixed">
-              <input className="m-3 w-32 py-1/2 px-2 bg-white2 rounded"></input>
+              {/* <input className="m-3 w-32 py-1/2 px-2 bg-white2 rounded"></input> */}
               <p className="text-md p-3">
                 <a
                   onClick={(e: SyntheticEvent) => {
@@ -63,7 +63,7 @@ const DashBoard = () => {
               {data &&
                 data.data.map((value: any, i: number) => (
                   <div key={i}>
-                    <Card data={value} />
+                    <Card mutate={mutate} data={value} />
                   </div>
                 ))}
             </div>

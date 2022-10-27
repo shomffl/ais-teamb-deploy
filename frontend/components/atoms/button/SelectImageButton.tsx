@@ -1,8 +1,8 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, useRef } from "react";
 import { Controller } from "react-hook-form";
 import { AiFillPicture } from "react-icons/ai";
 
-const ImageInput = ({ control }: { control: any }) => {
+const ImageInput = ({ control }: { control: any; defaultValue?: string }) => {
   return (
     <>
       <label>
@@ -11,15 +11,27 @@ const ImageInput = ({ control }: { control: any }) => {
             name="image_path"
             control={control}
             render={({ field }) => {
-              const { value, onChange } = field;
+              const imgref = useRef<HTMLInputElement>(null);
+              const { onChange } = field;
               const handleChangeFile: ChangeEventHandler<HTMLInputElement> = (
                 e
               ) => {
-                const { files } = e.target;
-                files && onChange(window.URL.createObjectURL(files[0]));
+                const img = e.target.files ? e.target.files[0] : null;
+                const reader = new FileReader();
+                img && reader.readAsDataURL(img);
+                reader.onload = (e: any) => {
+                  if (imgref.current) {
+                    imgref.current.setAttribute("src", e.target.result);
+                    const source = imgref.current.src;
+                    onChange(source);
+                  }
+                };
+                // const { files } = e.target;
+                // files && onChange(window.URL.createObjectURL(files[0]));
               };
               return (
                 <input
+                  ref={imgref}
                   accept="image/*"
                   type="file"
                   className="hidden"

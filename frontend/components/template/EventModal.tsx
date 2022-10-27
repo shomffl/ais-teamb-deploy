@@ -1,21 +1,29 @@
-import { TypographyStylesProvider } from "@mantine/core";
 import Image from "next/image";
-import { AiOutlineClose } from "react-icons/ai";
+import Link from "next/link";
+import { AiFillDelete, AiFillEdit, AiOutlineClose } from "react-icons/ai";
+import { deleteEvent } from "../../api/event";
 import image from "../../public/railroad-163518__480.jpg";
 const EventModal = ({
   markdown,
   open,
   setOpen,
   data,
+  mutate,
 }: {
   markdown?: any;
   open: boolean;
   setOpen: (arg: boolean) => void;
   data: any;
+  mutate: any;
 }) => {
+  function createElementFromHTML(html: string) {
+    const tempEl = document.createElement("div");
+    tempEl.innerHTML = html;
+    return tempEl.firstElementChild;
+  }
   return (
     <div
-      className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-40 ${
+      className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-60 ${
         open || "hidden"
       }`}
     >
@@ -28,8 +36,27 @@ const EventModal = ({
         <AiOutlineClose />
       </div>
 
-      <div className="w-3/5 mx-auto  pt-32">
-        <div className="w-full aspect-[2/1]">
+      <div className="w-3/5 mx-auto  pt-32 ">
+        <div className="w-full aspect-[2/1] relative">
+          <div className="absolute top-8 right-8 z-10 inline-flex">
+            <Link
+              as={`/event/${data.id}`}
+              href={{ pathname: `/event/[event]`, query: data }}
+            >
+              <div>
+                <AiFillEdit size={20} />
+              </div>
+            </Link>
+            <div
+              onClick={() => {
+                mutate(deleteEvent(data.id));
+                setOpen(false);
+              }}
+            >
+              <AiFillDelete size={20} />
+            </div>
+          </div>
+
           <Image
             layout="responsive"
             height={120}
@@ -40,12 +67,12 @@ const EventModal = ({
         </div>
 
         <div className="p-10 bg-white">
-          <p className="font-bold text-4xl">{data.name}</p>
-          <TypographyStylesProvider>
-            <div
+          <p className="font-bold text-6xl mb-12">{data.name}</p>
+          <article className="prose lg:prose-xl">
+            <span
               dangerouslySetInnerHTML={{ __html: data.detail || markdown }}
-            />
-          </TypographyStylesProvider>
+            ></span>
+          </article>
         </div>
       </div>
     </div>

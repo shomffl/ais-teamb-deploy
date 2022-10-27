@@ -11,7 +11,7 @@ const SelectImage = ({ control, watch }: any) => {
       <>
         {watch().image_path && (
           <div className="aspect-[2/1] h-60 relative">
-            <img src={watch().image_path} className="h-full w-full" />
+            <img src={`${watch().image_path}`} className="h-full w-full" />
             <div className="absolute bottom-2 right-0 z-10 flex space-x-2">
               <ImageInput control={control} />
               <DeleteFile control={control} />

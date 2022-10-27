@@ -1,22 +1,30 @@
-import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
-import { createEvent } from "../../api/event";
+import { createEvent, updateEvent } from "../../api/event";
 import BlackButton from "../atoms/button/BlackButton";
 import TitleInput from "../atoms/input/title/input";
 import RichTextEditor from "../atoms/RichText";
 import SelectImage from "../molucules/SelectImage";
 import Header from "../organisms/Header";
 
-const NewEvent = () => {
-  const [value, setValue] = useState("<p>本文</p>");
-  const handleOnChange = (value: any) => {
-    setValue(value);
-    console.log(value);
-  };
-  const { control, register, handleSubmit, watch } = useForm();
-  const editorRef = useRef<any>();
-  const onSubmit = (data: any) => createEvent(data);
+const ManageEvent = ({ eventData }: { eventData?: any }) => {
+  const router = useRouter();
+  const { control, register, handleSubmit, watch } = useForm(
+    eventData && {
+      defaultValues: {
+        name: eventData.name,
+        image_path: eventData.image_path,
+        detail: eventData.detail,
+      },
+    }
+  );
+  const onSubmit = (data: any) =>
+    eventData
+      ? updateEvent(eventData.id, data).then(() => router.push("/"))
+      : createEvent(data).then(() => router.push("/"));
+
   useEffect(() => {
     console.log(watch());
   });
@@ -64,4 +72,4 @@ const NewEvent = () => {
   );
 };
 
-export default NewEvent;
+export default ManageEvent;

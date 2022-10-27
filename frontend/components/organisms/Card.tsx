@@ -10,7 +10,7 @@ type eventType = {
   detail: string;
   image_path: any;
 };
-const Card = ({ data }: { data: eventType }) => {
+const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
   const [dark, setDark] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   return (
@@ -20,6 +20,7 @@ const Card = ({ data }: { data: eventType }) => {
         markdown={"<h1>title2</h1>"}
         open={open}
         setOpen={setOpen}
+        mutate={mutate}
       />
       <div
         className={`w-96 rounded-lg overflow-hidden shadow-lg relative ${
@@ -41,7 +42,11 @@ const Card = ({ data }: { data: eventType }) => {
           alt="Sunset in the mountains"
         />
         <div className="px-6 pt-4">
-          <div className={`text-2xl mb-2 text-left ${dark && "text-white2"}`}>
+          <div
+            className={`font-semibold text-2xl mb-2 text-left ${
+              dark && "text-white2"
+            }`}
+          >
             {data?.name}
           </div>
         </div>
