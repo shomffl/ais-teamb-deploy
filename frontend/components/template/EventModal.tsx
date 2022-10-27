@@ -23,12 +23,12 @@ const EventModal = ({
   }
   return (
     <div
-      className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-60 ${
+      className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-80 ${
         open || "hidden"
       }`}
     >
       <div
-        className="top-12 right-8 fixed"
+        className="top-12 right-8 fixed z-10 bg-white p-2 rounded-full"
         onClick={() => {
           setOpen(false);
         }}
@@ -38,22 +38,23 @@ const EventModal = ({
 
       <div className="w-3/5 mx-auto  pt-32 ">
         <div className="w-full aspect-[2/1] relative">
-          <div className="absolute top-8 right-8 z-10 inline-flex">
+          <div className="absolute top-8 right-8 z-10 inline-flex space-x-2">
             <Link
               as={`/event/${data.id}`}
               href={{ pathname: `/event/[event]`, query: data }}
             >
-              <div>
-                <AiFillEdit size={20} />
+              <div className="bg-navy2 p-2 rounded-full">
+                <AiFillEdit size={20} color="white" />
               </div>
             </Link>
             <div
+              className="bg-navy2 p-2 rounded-full"
               onClick={() => {
                 mutate(deleteEvent(data.id));
                 setOpen(false);
               }}
             >
-              <AiFillDelete size={20} />
+              <AiFillDelete size={20} color="white" />
             </div>
           </div>
 
