@@ -37,7 +37,7 @@ const Card = ({ data }: { data: eventType }) => {
         </div>
         <img
           className="w-full h-48"
-          src={image.src}
+          src={data.image_path || image.src}
           alt="Sunset in the mountains"
         />
         <div className="px-6 pt-4">

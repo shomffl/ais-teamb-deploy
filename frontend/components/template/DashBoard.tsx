@@ -1,5 +1,5 @@
 import { SyntheticEvent } from "react";
-import { getMyEvent } from "../../api/getEvent";
+import { getMyEvent } from "../../api/event";
 import NewButton from "../atoms/button/NewButton";
 import Card from "../organisms/Card";
 

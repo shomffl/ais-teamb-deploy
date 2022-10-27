@@ -34,7 +34,7 @@ const EventModal = ({
             layout="responsive"
             height={120}
             width={240}
-            src={image.src}
+            src={data.image_path || image.src}
             className="overflow-hidden"
           />
         </div>
@@ -42,7 +42,9 @@ const EventModal = ({
         <div className="p-10 bg-white">
           <p className="font-bold text-4xl">{data.name}</p>
           <TypographyStylesProvider>
-            <div dangerouslySetInnerHTML={{ __html: markdown }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: data.detail || markdown }}
+            />
           </TypographyStylesProvider>
         </div>
       </div>

@@ -8,3 +8,13 @@ export const getMyEvent = () => {
   const { data, error, mutate } = useSWR(`${URL}/events`, fetcher);
   return { data, isLoading: !error && !data, error, mutate };
 };
+export const createEvent = (data: any) => {
+  axios
+    .post(`${URL}/events`, data)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
