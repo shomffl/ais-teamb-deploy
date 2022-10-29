@@ -16,11 +16,6 @@ const EventModal = ({
   data: any;
   mutate: any;
 }) => {
-  function createElementFromHTML(html: string) {
-    const tempEl = document.createElement("div");
-    tempEl.innerHTML = html;
-    return tempEl.firstElementChild;
-  }
   return (
     <div
       className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-80 ${
