@@ -1,9 +1,9 @@
-import NewEvent from "../../components/template/NewEvent";
+import ManageEvent from "../../components/template/ManageEvent";
 
 const index = () => {
   return (
     <div>
-      <NewEvent />
+      <ManageEvent />
     </div>
   );
 };
