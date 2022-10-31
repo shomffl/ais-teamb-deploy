@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
 import image from "../../public/railroad-163518__480.jpg";
@@ -23,7 +24,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
         mutate={mutate}
       />
       <div
-        className={`w-96 rounded-lg overflow-hidden shadow-lg relative ${
+        className={`w-4/5 rounded-lg overflow-hidden shadow-lg relative ${
           dark ? "bg-navy2" : "bg-white2"
         }`}
         onClick={() => setOpen(true)}
@@ -36,11 +37,16 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
         >
           {dark ? <BsBrightnessHigh /> : <BsMoonStarsFill />}
         </div>
-        <img
-          className="w-full h-48"
-          src={data.image_path || image.src}
-          alt="Sunset in the mountains"
-        />
+        <div className="w-full aspect-[2/1]">
+          <Image
+            layout="responsive"
+            width={372}
+            height={186}
+            src={data.image_path || image.src}
+            alt=""
+          />
+        </div>
+
         <div className="px-6 pt-4">
           <div
             className={`font-semibold text-2xl mb-2 text-left ${
