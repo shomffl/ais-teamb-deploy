@@ -2,7 +2,9 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useSetRecoilState } from "recoil";
 import { createEvent, updateEvent } from "../../api/event";
+import { messageState } from "../../atom/MessageAtom";
 import BlackButton from "../atoms/button/BlackButton";
 import TitleInput from "../atoms/input/title/input";
 import RichTextEditor from "../atoms/RichText";
@@ -11,6 +13,7 @@ import Header from "../organisms/Header";
 
 const ManageEvent = ({ eventData }: { eventData?: any }) => {
   const router = useRouter();
+  const setMessage = useSetRecoilState(messageState);
   const { control, register, handleSubmit, watch } = useForm(
     eventData && {
       defaultValues: {
@@ -21,7 +24,9 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
     }
   );
   const onSubmit = (data: any) =>
-    eventData ? updateEvent(eventData.id, data) : createEvent(data);
+    eventData
+      ? updateEvent(eventData.id, data, setMessage)
+      : createEvent(data, setMessage);
 
   useEffect(() => {
     console.log(watch());

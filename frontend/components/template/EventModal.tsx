@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillDelete, AiFillEdit, AiOutlineClose } from "react-icons/ai";
+import { useSetRecoilState } from "recoil";
 import { deleteEvent } from "../../api/event";
+import { messageState } from "../../atom/MessageAtom";
 import image from "../../public/railroad-163518__480.jpg";
 const EventModal = ({
   markdown,
@@ -16,6 +18,8 @@ const EventModal = ({
   data: any;
   mutate: any;
 }) => {
+  const setMessage = useSetRecoilState(messageState);
+
   return (
     <div
       className={`overflow-auto fixed top-0 left-0 w-screen h-screen z-10 bg-black bg-opacity-80 ${
@@ -45,7 +49,7 @@ const EventModal = ({
             <div
               className="bg-navy2 p-2 rounded-full"
               onClick={() => {
-                mutate(deleteEvent(data.id));
+                mutate(deleteEvent(data.id, setMessage));
                 setOpen(false);
               }}
             >
