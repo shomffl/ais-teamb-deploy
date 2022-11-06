@@ -21,9 +21,7 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
     }
   );
   const onSubmit = (data: any) =>
-    eventData
-      ? updateEvent(eventData.id, data).then(() => router.push("/"))
-      : createEvent(data).then(() => router.push("/"));
+    eventData ? updateEvent(eventData.id, data) : createEvent(data);
 
   useEffect(() => {
     console.log(watch());

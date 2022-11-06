@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_10_13_051436) do
     t.integer "company_id"
     t.string "name"
     t.text "detail"
-    t.text "image_path"
+    t.text "image_path", size: :long
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
