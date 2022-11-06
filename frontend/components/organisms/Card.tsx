@@ -25,7 +25,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
         mutate={mutate}
       />
       <div
-        className={`w-4/5 rounded-lg overflow-hidden shadow-lg relative ${
+        className={`w-full rounded-lg overflow-hidden shadow-lg relative cursor-pointer ${
           dark ? "bg-navy2" : "bg-white2"
         }`}
         onClick={() => setOpen(true)}
