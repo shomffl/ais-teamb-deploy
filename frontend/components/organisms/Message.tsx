@@ -8,7 +8,7 @@ const Message = () => {
   useEffect(() => {
     setTimeout(() => {
       setMessage({ ...message, open: false });
-    }, 10000);
+    }, 50000);
   }, []);
   return (
     <div

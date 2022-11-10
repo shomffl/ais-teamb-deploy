@@ -1,14 +1,15 @@
 import Header from "../../components/organisms/Header";
+import AllEvent from "../../components/template/AllEvent";
 
-const AllEvent = () => {
+const index = () => {
   return (
     <>
       <div>
         <Header page={1} />
-        all
+        <AllEvent />
       </div>
     </>
   );
 };
 
-export default AllEvent;
+export default index;

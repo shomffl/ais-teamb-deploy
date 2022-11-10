@@ -19,8 +19,8 @@ const DashBoard = () => {
   const { data, isLoading, error, mutate } = getMyEvent();
   return (
     <>
-      <div className="md:container mx-auto py-20">
-        <div className="grid grid-cols-5 text-left">
+      <div className="md:container mx-auto py-16">
+        <div className="grid grid-cols-6 text-left">
           <div className="relative">
             <div className="my-36 w-44 justify-self-start fixed">
               {/* <input className="m-3 w-32 py-1/2 px-2 bg-white2 rounded"></input> */}
@@ -49,7 +49,7 @@ const DashBoard = () => {
             </div>
           </div>
 
-          <div className="col-span-4">
+          <div className="col-span-5">
             <div className="grid grid-cols-2 justify-between">
               <p className="text-5xl text-left font-bold">My Events</p>
               <div className="justify-self-end">
