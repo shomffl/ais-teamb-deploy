@@ -14,6 +14,8 @@ module Api
       end
 
       def create
+        binding.pry # pry-rails
+        # byebug 
         event = Event.new(event_params)
         if event.save
           render json: { status: 'SUCCESS', data: event }
@@ -51,7 +53,7 @@ module Api
 
       private
       def event_params
-        params.require(:event).permit(:name, :detail, :image_path)
+        params.require(:event).permit(:name, :detail, :image)
       end
     end
   end
