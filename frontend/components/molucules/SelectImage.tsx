@@ -1,10 +1,7 @@
-import useImageFile from "../../hooks/ImageFile";
 import ImageInput from "../atoms/button/SelectImageButton";
 import DeleteFile from "../atoms/DeleteFile";
 
 const SelectImage = ({ control, watch }: any) => {
-  const { image, setImage, handleChangeFile } = useImageFile();
-
   return (
     <div>
       {!watch().image_path && <ImageInput control={control} />}

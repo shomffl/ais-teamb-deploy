@@ -4,7 +4,7 @@ import { AiFillDelete, AiFillEdit, AiOutlineClose } from "react-icons/ai";
 import { useSetRecoilState } from "recoil";
 import { deleteEvent } from "../../api/event";
 import { messageState } from "../../atom/MessageAtom";
-import image from "../../public/railroad-163518__480.jpg";
+
 const EventModal = ({
   markdown,
   open,
@@ -19,6 +19,7 @@ const EventModal = ({
   mutate: any;
 }) => {
   const setMessage = useSetRecoilState(messageState);
+  const image = "https://source.unsplash.com/DJ7bWa-Gwks";
 
   return (
     <div
@@ -61,7 +62,7 @@ const EventModal = ({
             layout="responsive"
             height={120}
             width={240}
-            src={data.image_path || image.src}
+            src={data.image_path || image}
             className="overflow-hidden"
           />
         </div>
