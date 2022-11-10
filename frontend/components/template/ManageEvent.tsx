@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -12,7 +11,6 @@ import SelectImage from "../molucules/SelectImage";
 import Header from "../organisms/Header";
 
 const ManageEvent = ({ eventData }: { eventData?: any }) => {
-  const router = useRouter();
   const setMessage = useSetRecoilState(messageState);
   const { control, register, handleSubmit, watch } = useForm(
     eventData && {
