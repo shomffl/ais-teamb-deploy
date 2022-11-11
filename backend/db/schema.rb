@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2022_11_10_045057) do
     t.integer "company_id"
     t.string "name"
     t.text "detail"
-    t.text "image_path", size: :long
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

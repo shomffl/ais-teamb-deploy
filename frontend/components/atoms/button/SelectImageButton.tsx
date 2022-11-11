@@ -16,18 +16,18 @@ const ImageInput = ({ control }: { control: any; defaultValue?: string }) => {
               const handleChangeFile: ChangeEventHandler<HTMLInputElement> = (
                 e
               ) => {
-                const img = e.target.files ? e.target.files[0] : null;
-                const reader = new FileReader();
-                img && reader.readAsDataURL(img);
-                reader.onload = (e: any) => {
-                  if (imgref.current) {
-                    imgref.current.setAttribute("src", e.target.result);
-                    const source = imgref.current.src;
-                    onChange(source);
-                  }
-                };
-                // const { files } = e.target;
-                // files && onChange(window.URL.createObjectURL(files[0]));
+                // const img = e.target.files ? e.target.files[0] : null;
+                // const reader = new FileReader();
+                // img && reader.readAsDataURL(img);
+                // reader.onload = (e: any) => {
+                //   if (imgref.current) {
+                //     imgref.current.setAttribute("src", e.target.result);
+                //     const source = imgref.current.src;
+                //     onChange(source);
+                //   }
+                // };
+                const { files } = e.target;
+                files && onChange(window.URL.createObjectURL(files[0]));
               };
               return (
                 <input

@@ -5,6 +5,6 @@ puts 'event Start to create dummy data...'
         company_id: index + 1,
         name: Faker::Company.name,
         detail: Faker::Company.catch_phrase,
-        image_path: Faker::Company.logo
+        # image_path: Faker::Company.logo
     )
 end
