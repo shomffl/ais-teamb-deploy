@@ -4,7 +4,7 @@ const Tab = ({ tab }: { tab?: number }) => {
   return (
     <>
       <div className="ml-16 flex lg:space-x-6 space-x-4">
-        <Link href="/">
+        <Link href="/company">
           <div
             className={`py-7 hover:border-b hover:text-blue2-light hover:border-blue2-light border-blue2 text-gray2 cursor-pointer ${
               tab === 0 && "border-b text-blue2"
@@ -14,7 +14,7 @@ const Tab = ({ tab }: { tab?: number }) => {
           </div>
         </Link>
 
-        <Link href="/allevent">
+        <Link href="/company/allevent">
           <div
             className={`py-7 hover:border-b hover:text-blue2-light hover:border-blue2-light border-blue2 text-gray2 cursor-pointer ${
               tab === 1 && "border-b text-blue2"

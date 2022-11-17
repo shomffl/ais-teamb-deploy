@@ -1,5 +1,5 @@
-import Header from "../../components/organisms/Header";
-import AllEvent from "../../components/template/AllEvent";
+import Header from "../../../components/organisms/Header";
+import AllEvent from "../../../components/template/AllEvent";
 
 const index = () => {
   return (

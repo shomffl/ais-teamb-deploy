@@ -1,4 +1,4 @@
-import ManageEvent from "../../components/template/ManageEvent";
+import ManageEvent from "../../../components/template/ManageEvent";
 
 const index = () => {
   return (
