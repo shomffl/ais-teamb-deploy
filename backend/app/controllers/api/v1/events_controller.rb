@@ -14,7 +14,6 @@ module Api
       end
 
       def create
-        binding.pry # pry-rails
         # byebug 
         event = Event.new(event_params)
         if event.save

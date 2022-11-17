@@ -6,6 +6,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.integer :company_id
       t.string :name
       t.text :detail      
+      t.string :image_path
 
       t.timestamps
     end
