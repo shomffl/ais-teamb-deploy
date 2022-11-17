@@ -17,6 +17,7 @@ const DashBoard = () => {
     }
   };
   const { data, isLoading, error, mutate } = getMyEvent();
+  console.log(data);
   return (
     <>
       <div className="md:container mx-auto py-16">

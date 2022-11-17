@@ -7,13 +7,13 @@ const AxiosErrorHandleProvider = ({ children }: { children: ReactNode }) => {
     // axiosの共通エラーハンドリング記述
     axios.interceptors.response.use(
       (response: any) => {
-        router.push("/");
+        // router.push("/company");
         return response;
       },
       (error: any) => {
         switch (error.response?.status) {
           case 404:
-            router.push("/newevent");
+            router.push("/company/newevent");
             return Promise.reject(error.response?.data);
         }
       }

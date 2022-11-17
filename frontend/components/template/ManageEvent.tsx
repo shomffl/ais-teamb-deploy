@@ -16,7 +16,7 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
     eventData && {
       defaultValues: {
         name: eventData.name,
-        image_path: eventData.image_path,
+        image: eventData.image_url,
         detail: eventData.detail,
       },
     }
@@ -35,7 +35,7 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container mx-auto p-20 space-y-4">
           <TitleInput props={register("name")} />
-          <SelectImage control={control} watch={watch} />
+          <SelectImage control={control} watch={watch().image} />
           <Controller
             control={control}
             name="detail"
