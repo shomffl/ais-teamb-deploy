@@ -2,6 +2,6 @@
 
 class Event < ApplicationRecord
     
-    has_one_attached :image
+    mount_uploader :image_path, ImageUploader
     
 end

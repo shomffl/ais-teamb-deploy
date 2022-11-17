@@ -14,7 +14,7 @@ module Api
       end
 
       def create
-        binding.pry # pry-rails
+        # binding.pry # pry-rails
         # byebug 
         event = Event.new(event_params)
         if event.save
@@ -53,7 +53,7 @@ module Api
 
       private
       def event_params
-        params.require(:event).permit(:name, :detail, :image)
+        params.require(:event).permit(:name, :detail, :image_path)
       end
     end
   end

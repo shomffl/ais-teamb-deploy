@@ -40,8 +40,8 @@ const EventModal = ({
         <div className="w-full aspect-[2/1] relative">
           <div className="absolute top-8 right-8 z-10 inline-flex space-x-2">
             <Link
-              as={`/event/${data.id}`}
-              href={{ pathname: `/event/[event]`, query: data }}
+              as={`/company/event/${data.id}`}
+              href={{ pathname: `/company/event/[event]`, query: data }}
             >
               <div className="bg-navy2 p-2 rounded-full">
                 <AiFillEdit size={20} color="white" />
@@ -62,7 +62,7 @@ const EventModal = ({
             layout="responsive"
             height={120}
             width={240}
-            src={data.image_path || image}
+            src={data.image_path.url || image}
             className="overflow-hidden"
           />
         </div>

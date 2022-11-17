@@ -43,7 +43,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
             layout="responsive"
             width={372}
             height={186}
-            src={data.image_path || image}
+            src={data.image_path.url || image}
             alt=""
           />
         </div>
