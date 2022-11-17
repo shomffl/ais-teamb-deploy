@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   const message = useRecoilValue(messageState);
   return (
     <AxiosErrorHandleProvider>
-      <Header page={0}></Header>
+      <Header genre="company" page={0}></Header>
       <DashBoard />
       <ScrollToTop />
       {message.open && <Message />}

@@ -5,7 +5,7 @@ const index = () => {
   return (
     <>
       <div>
-        <Header page={1} />
+        <Header genre="student" page={1}></Header>
         <AllEvent />
       </div>
     </>
