@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NewButton from "../atoms/button/NewButton";
 import Tab from "../molucules/Tab";
 import UserMenu from "../molucules/UserMenu";
@@ -7,7 +8,10 @@ const Header = ({ page }: { page?: number }) => {
     <div className="h-full relative">
       <div className="h-20 w-screen grid grid-cols-2 content-center border-b bg-white">
         <div className="justify-self-start ml-6 flex items-center">
-          <p className="font-bold text-2xl text-navy2">Young Career</p>
+          <Link href="/">
+            <p className="font-bold text-2xl text-navy2">Young Career</p>
+          </Link>
+
           <Tab tab={page}></Tab>
         </div>
         <div className="justify-self-end mr-6 items-center flex space-x-4">
