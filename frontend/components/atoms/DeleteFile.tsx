@@ -6,7 +6,7 @@ const DeleteFile = ({ control }: { control: any }) => {
     <div>
       <Controller
         control={control}
-        name="image_path"
+        name="image"
         render={({ field }) => {
           const { onChange } = field;
           return (

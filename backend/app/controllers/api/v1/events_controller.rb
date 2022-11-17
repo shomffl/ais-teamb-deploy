@@ -53,7 +53,7 @@ module Api
 
       private
       def event_params
-        params.require(:event).permit(:name, :detail, :image_path)
+        params.require(:event).permit(:name, :detail, :image)
       end
     end
   end
