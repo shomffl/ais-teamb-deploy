@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import { BsBrightnessHigh, BsMoonStarsFill } from "react-icons/bs";
 
@@ -15,8 +14,8 @@ const defaultImage = "https://source.unsplash.com/DJ7bWa-Gwks";
 const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
   const [dark, setDark] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
-  const img = data.image_path.url;
-  console.log(img);
+  const img = data?.image_path?.url || data?.image_path;
+
   return (
     <div>
       <EventModal
@@ -41,13 +40,19 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
           {dark ? <BsBrightnessHigh /> : <BsMoonStarsFill />}
         </div>
         <div className="w-full aspect-[2/1]">
-          <Image
+          <img
+            src={"http://" + img.split("://")[1] || defaultImage}
+            className="h-full w-full"
+          />
+          {/* <Image
             layout="responsive"
             width={372}
             height={186}
-            src={img || defaultImage}
+            src={
+              "http://" + data.image_path.url.split("://")[1] || defaultImage
+            }
             alt=""
-          />
+          /> */}
         </div>
 
         <div className="px-6 pt-4">

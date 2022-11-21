@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { AiFillDelete, AiFillEdit, AiOutlineClose } from "react-icons/ai";
 import { useSetRecoilState } from "recoil";
@@ -19,7 +18,8 @@ const EventModal = ({
   mutate: any;
 }) => {
   const setMessage = useSetRecoilState(messageState);
-  const image = "https://source.unsplash.com/DJ7bWa-Gwks";
+  const defaultImage = "https://source.unsplash.com/DJ7bWa-Gwks";
+  const img = data?.image_path?.url || data?.image_path;
 
   return (
     <div
@@ -41,7 +41,14 @@ const EventModal = ({
           <div className="absolute top-8 right-8 z-10 inline-flex space-x-2">
             <Link
               as={`/company/event/${data.id}`}
-              href={{ pathname: `/company/event/[event]`, query: data }}
+              href={{
+                pathname: `/company/event/[event]`,
+                query: {
+                  name: data.name,
+                  image_path: data.image_path.url,
+                  detail: data.detail,
+                },
+              }}
             >
               <div className="bg-navy2 p-2 rounded-full">
                 <AiFillEdit size={20} color="white" />
@@ -57,14 +64,18 @@ const EventModal = ({
               <AiFillDelete size={20} color="white" />
             </div>
           </div>
+          <img
+            src={"http://" + img.split("://")[1] || defaultImage}
+            className="h-full w-full"
+          />
 
-          <Image
+          {/* <Image
             layout="responsive"
             height={120}
             width={240}
             src={data.image_path.url || image}
             className="overflow-hidden"
-          />
+          /> */}
         </div>
 
         <div className="p-10 bg-white">
