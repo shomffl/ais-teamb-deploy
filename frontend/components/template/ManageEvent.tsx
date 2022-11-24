@@ -21,10 +21,21 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
       },
     }
   );
-  const onSubmit = (data: any) =>
+  const onSubmit = (data: any) => {
+    const createFormData = () => {
+      const formData = new FormData();
+      formData.append("event[image_path]", data.image_path);
+      formData.append("event[name]", data.name);
+      formData.append("event[detail]", data.detail);
+      return formData;
+    };
+
+    const datai = createFormData();
+
     eventData
-      ? updateEvent(eventData.id, data, setMessage)
-      : createEvent(data, setMessage);
+      ? updateEvent(eventData.id, datai, setMessage)
+      : createEvent(datai, setMessage);
+  };
 
   useEffect(() => {
     console.log(watch());
@@ -35,7 +46,7 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container mx-auto p-20 space-y-4">
           <TitleInput props={register("name")} />
-          <SelectImage control={control} watch={watch} />
+          <SelectImage control={control} watch={watch().image_path} />
           <Controller
             control={control}
             name="detail"

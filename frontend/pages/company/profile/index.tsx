@@ -1,9 +1,9 @@
-import Header from "../../components/organisms/Header";
+import Header from "../../../components/organisms/Header";
 
 const Profile = () => {
   return (
     <div>
-      <Header />
+      <Header genre="company"></Header>
       Profile
     </div>
   );

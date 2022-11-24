@@ -5,7 +5,9 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     create_table :events do |t|
       t.integer :company_id
       t.string :name
-      t.text :detail      
+      t.text :detail
+      t.string :image
+      t.string :image_path      
 
       t.timestamps
     end

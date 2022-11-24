@@ -1,17 +1,19 @@
+import { useState } from "react";
 import ImageInput from "../atoms/button/SelectImageButton";
 import DeleteFile from "../atoms/DeleteFile";
 
 const SelectImage = ({ control, watch }: any) => {
+  const [image, setImage] = useState("");
   return (
     <div>
-      {!watch().image_path && <ImageInput control={control} />}
+      {!watch && <ImageInput setImage={setImage} control={control} />}
       <>
-        {watch().image_path && (
+        {watch && (
           <div className="aspect-[2/1] h-60 relative">
-            <img src={`${watch().image_path}`} className="h-full w-full" />
+            <img src={`${image}`} className="h-full w-full" />
             <div className="absolute bottom-2 right-0 z-10 flex space-x-2">
-              <ImageInput control={control} />
-              <DeleteFile control={control} />
+              <ImageInput setImage={setImage} control={control} />
+              <DeleteFile setImage={setImage} control={control} />
             </div>
           </div>
         )}

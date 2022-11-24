@@ -1,22 +1,17 @@
-import type { NextPage } from "next";
-import { useRecoilValue } from "recoil";
-import { messageState } from "../atom/MessageAtom";
-import ScrollToTop from "../components/atoms/ScrollToTop";
-import AxiosErrorHandleProvider from "../components/error/AxiosErrorHandleProvider";
-import Header from "../components/organisms/Header";
-import Message from "../components/organisms/Message";
-import DashBoard from "../components/template/DashBoard";
+import Link from "next/link";
 
-const Home: NextPage = () => {
-  const message = useRecoilValue(messageState);
+const index = () => {
   return (
-    <AxiosErrorHandleProvider>
-      <Header page={0}></Header>
-      <DashBoard />
-      <ScrollToTop />
-      {message.open && <Message />}
-    </AxiosErrorHandleProvider>
+    <div className="grid place-content-center h-screen bg-navy2 text-center gap-y-2">
+      <p className="text-blue2-light text-6xl font-bold mb-4">Young Career</p>
+      <Link href="/company">
+        <a className="text-white2 font-semibold underline">企業ページへ</a>
+      </Link>
+      <Link href="/student/allevent">
+        <a className="text-white2 font-semibold underline">学生ページへ</a>
+      </Link>
+    </div>
   );
 };
 
-export default Home;
+export default index;

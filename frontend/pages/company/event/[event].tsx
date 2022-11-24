@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import ManageEvent from "../../components/template/ManageEvent";
+import ManageEvent from "../../../components/template/ManageEvent";
 
 const Event = () => {
   const router = useRouter();

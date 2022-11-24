@@ -51,3 +51,5 @@ gem 'rubocop'
 gem 'devise'
 gem 'devise_token_auth'
 
+# 画像ファイルアップデートのためのgem
+gem 'carrierwave', '~> 2.0'

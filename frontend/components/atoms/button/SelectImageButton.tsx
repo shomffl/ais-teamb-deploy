@@ -2,7 +2,13 @@ import { ChangeEventHandler, useRef } from "react";
 import { Controller } from "react-hook-form";
 import { AiFillPicture } from "react-icons/ai";
 
-const ImageInput = ({ control }: { control: any; defaultValue?: string }) => {
+const ImageInput = ({
+  control,
+  setImage,
+}: {
+  control: any;
+  setImage: (arg: string) => void;
+}) => {
   return (
     <>
       <label>
@@ -16,18 +22,10 @@ const ImageInput = ({ control }: { control: any; defaultValue?: string }) => {
               const handleChangeFile: ChangeEventHandler<HTMLInputElement> = (
                 e
               ) => {
-                // const img = e.target.files ? e.target.files[0] : null;
-                // const reader = new FileReader();
-                // img && reader.readAsDataURL(img);
-                // reader.onload = (e: any) => {
-                //   if (imgref.current) {
-                //     imgref.current.setAttribute("src", e.target.result);
-                //     const source = imgref.current.src;
-                //     onChange(source);
-                //   }
-                // };
+                const img = e.target.files ? e.target.files[0] : null;
+                onChange(img);
                 const { files } = e.target;
-                files && onChange(window.URL.createObjectURL(files[0]));
+                files && setImage(window.URL.createObjectURL(files[0]));
               };
               return (
                 <input

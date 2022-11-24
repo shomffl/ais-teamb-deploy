@@ -11,10 +11,12 @@ type eventType = {
   detail: string;
   image_path: any;
 };
-const image = "https://source.unsplash.com/DJ7bWa-Gwks";
+const defaultImage = "https://source.unsplash.com/DJ7bWa-Gwks";
 const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
   const [dark, setDark] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+  const img = data.image_path.url;
+  console.log(img);
   return (
     <div>
       <EventModal
@@ -43,7 +45,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
             layout="responsive"
             width={372}
             height={186}
-            src={data.image_path || image}
+            src={img || defaultImage}
             alt=""
           />
         </div>
@@ -66,7 +68,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
               <img
                 className="w-full h-full rounded-full"
                 alt=""
-                src={image}
+                src={defaultImage}
               ></img>
             </div>
             <p className={dark ? "text-white2" : ""}>Company</p>

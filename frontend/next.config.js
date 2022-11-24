@@ -11,7 +11,7 @@ const nextConfig = {
         pathname: "fake-logos/logos/medium/color",
       },
     ],
-    domains: ["source.unsplash.com"],
+    domains: ["source.unsplash.com", "127.0.0.1", "localhost"],
   },
 };
 
