@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -8,18 +9,26 @@ import BlackButton from "../atoms/button/BlackButton";
 import TitleInput from "../atoms/input/title/input";
 import RichTextEditor from "../atoms/RichText";
 import SelectImage from "../molucules/SelectImage";
-import Header from "../organisms/Header";
 
 const ManageEvent = ({ eventData }: { eventData?: any }) => {
   const setMessage = useSetRecoilState(messageState);
+  const router = useRouter();
   const { control, register, handleSubmit, watch } = useForm(
-    eventData && {
-      defaultValues: {
-        name: eventData.name,
-        image_path: eventData.image_path,
-        detail: eventData.detail,
-      },
-    }
+    eventData
+      ? {
+          defaultValues: {
+            name: eventData.name,
+            image_path: eventData.image_path,
+            detail: eventData.detail,
+          },
+        }
+      : {
+          defaultValues: {
+            name: "",
+            image_path: undefined,
+            detail: "<p></p>",
+          },
+        }
   );
   const onSubmit = (data: any) => {
     const createFormData = () => {
@@ -33,16 +42,15 @@ const ManageEvent = ({ eventData }: { eventData?: any }) => {
     const datai = createFormData();
 
     eventData
-      ? updateEvent(eventData.id, datai, setMessage)
-      : createEvent(datai, setMessage);
+      ? updateEvent(eventData.id, datai, setMessage, router)
+      : createEvent(datai, setMessage, router);
   };
 
   useEffect(() => {
-    console.log(watch());
+    console.log(eventData);
   });
   return (
     <div>
-      <Header />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container mx-auto p-20 space-y-4">
           <TitleInput props={register("name")} />

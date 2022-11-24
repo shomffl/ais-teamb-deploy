@@ -11,7 +11,12 @@ const nextConfig = {
         pathname: "fake-logos/logos/medium/color",
       },
     ],
-    domains: ["source.unsplash.com", "127.0.0.1", "localhost"],
+    domains: [
+      "source.unsplash.com",
+      "rails-seeder-backet.s3.ap-northeast-1.amazonaws.com",
+      "127.0.0.1",
+      "localhost",
+    ],
   },
 };
 
