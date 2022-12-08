@@ -15,6 +15,7 @@ const Card = ({ data, mutate }: { data: eventType; mutate?: any }) => {
   const [dark, setDark] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   const img = data?.image_path?.url || data?.image_path;
+  console.log("http://" + img.split("://")[1], img);
 
   return (
     <div>

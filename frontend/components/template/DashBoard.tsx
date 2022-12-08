@@ -68,7 +68,7 @@ const DashBoard = () => {
                   </div>
                 ))}
             </div>
-            <p id="notrecuruite" className="text-4xl text-left my-6 mt-14">
+            {/* <p id="notrecuruite" className="text-4xl text-left my-6 mt-14">
               募集済み
             </p>
             <div className="grid  lg:grid-cols-2 grid-cols-1 gap-x-6 gap-y-8 ">
@@ -78,7 +78,7 @@ const DashBoard = () => {
                     <Card data={value} />
                   </div>
                 ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
