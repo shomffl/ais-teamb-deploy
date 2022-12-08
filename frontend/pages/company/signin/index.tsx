@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { signIn } from "../../../api/auth";
 import DefaultButton from "../../../components/atoms/button/Default";
@@ -37,6 +38,11 @@ const index = () => {
           <div>
             <DefaultButton>Sign In</DefaultButton>
           </div>
+          <Link href="/company/signup">
+            <a className="text-white2 font-semibold underline mt-2">
+              アカウント作成
+            </a>
+          </Link>
         </div>
       </div>
     </form>
