@@ -11,3 +11,4 @@
 # seedsのフォルダで作成したファイルをimport
 require './db/seeds/eventData'
 require './db/seeds/schoolData'
+require './db/seeds/userData'
