@@ -25,7 +25,7 @@ const index = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="h-screen w-screen bg-navy2 grid place-content-center">
         <div className="w-fit  mx-auto text-center space-y-4">
-          <p className="text-blue2-light text-6xl font-bold mb-10">Sign In</p>
+          <p className="text-blue2-light text-6xl font-bold mb-10">Sign Up</p>
 
           <div>
             <Input register={register("name")} type="text" placeholder="Name" />
