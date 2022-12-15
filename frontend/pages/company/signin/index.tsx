@@ -9,8 +9,8 @@ const index = () => {
   const onSubmit = (data: any) => {
     const createFormData = () => {
       const formData = new FormData();
-      formData.append("user[email]", data.email);
-      formData.append("user[password]", data.password);
+      formData.append("email", data.email);
+      formData.append("password", data.password);
       return formData;
     };
     const authBody = createFormData();
