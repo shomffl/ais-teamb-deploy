@@ -13,7 +13,7 @@ export const signUp = async (body: any) => {
 };
 export const signIn = async (body: any) => {
   await axios
-    .post(`${URL}/auth/sign_in`)
+    .post(`${URL}/auth/sign_in`, body)
     .then((res) => {
       console.log(res);
     })

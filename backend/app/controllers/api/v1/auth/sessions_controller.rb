@@ -7,4 +7,8 @@ class Api::V1::Auth::SessionsController < ApplicationController
         render json: { is_login: false, message: "ユーザーが存在しません" }
       end
     end
+    # private
+    # def sign_in_params
+    #   params.require(:user).permit(:email, :password)
+    # end
 end
